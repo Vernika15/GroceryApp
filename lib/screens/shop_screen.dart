@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
+import 'package:online_groceries_app/ui_helper/text_styles.dart';
 
 class ShopScreen extends StatefulWidget {
   const ShopScreen({super.key});
@@ -44,33 +45,33 @@ class _ShopScreenState extends State<ShopScreen> {
             if (snapshot.hasData) {
               final data = snapshot.data!;
               return ListView(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 children: [
                   Text(
                     '${data.greeting}, ${data.userName}',
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: textStyle24(fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 4),
+                  SizedBox(height: 4),
                   Row(
                     children: [
-                      const Icon(Icons.location_on, color: Colors.green),
+                      Icon(Icons.location_on, color: AppColors.primary),
                       Text(data.location),
                     ],
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Image.network(data.bannerImage),
                   ),
-                  const SizedBox(height: 24),
-                  const Text(
+                  SizedBox(height: 24),
+                  Text(
                     'Categories',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    style: textStyle20(
+                      color: AppColors.textColor,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12),
                   SizedBox(
                     height: 100,
                     child: ListView.separated(
@@ -85,28 +86,27 @@ class _ShopScreenState extends State<ShopScreen> {
                               borderRadius: BorderRadius.circular(10),
                               child: Image.network(
                                 category.image,
-                                // 'assets/images/login_image.png',
                                 height: 60,
                                 width: 60,
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            const SizedBox(height: 8),
-                            Text(
-                              category.name,
-                              style: const TextStyle(fontSize: 12),
-                            ),
+                            SizedBox(height: 8),
+                            Text(category.name, style: textStyle12()),
                           ],
                         );
                       },
                     ),
                   ),
-                  const SizedBox(height: 24),
-                  const Text(
+                  SizedBox(height: 24),
+                  Text(
                     'Popular Items',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    style: textStyle20(
+                      color: AppColors.textColor,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12),
                   // // Column(
                   // //   children:
                   // //       data.popularItems.map((item) {
@@ -114,7 +114,7 @@ class _ShopScreenState extends State<ShopScreen> {
                   // //           shape: RoundedRectangleBorder(
                   // //             borderRadius: BorderRadius.circular(12),
                   // //           ),
-                  // //           margin: const EdgeInsets.only(bottom: 16),
+                  // //           margin:  EdgeInsets.only(bottom: 16),
                   // //           child: ListTile(
                   // //             leading: ClipRRect(
                   // //               borderRadius: BorderRadius.circular(10),
@@ -138,7 +138,7 @@ class _ShopScreenState extends State<ShopScreen> {
               return Center(child: Text('Error: ${snapshot.error}'));
             }
 
-            return const Center(child: CircularProgressIndicator());
+            return Center(child: CircularProgressIndicator());
           },
         ),
       ),

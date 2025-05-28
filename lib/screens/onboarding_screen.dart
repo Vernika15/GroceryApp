@@ -42,18 +42,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               Text(
                 'Welcome\nto our store',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 48,
+                style: textStyle48(
+                  color: AppColors.white,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
                 'Get your groceries in as fast as one hour',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
+                style: textStyle16(
+                  color: AppColors.white,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -72,7 +70,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       );
                     },
                     textStyle: textStyle18(
-                      color: Colors.white,
+                      color: AppColors.white,
                       fontWeight: FontWeight.w600,
                     ),
                     bgColor: AppColors.primary,

@@ -40,14 +40,13 @@ class _ExploreScreenState extends State<ExploreScreen> {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.white,
         elevation: 0,
-        title: const Text(
+        title: Text(
           'Find Products',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+          style: textStyle20(
+            color: AppColors.textColor,
+            fontWeight: FontWeight.w400,
           ),
         ),
         centerTitle: true,
@@ -61,9 +60,13 @@ class _ExploreScreenState extends State<ExploreScreen> {
             TextField(
               decoration: InputDecoration(
                 hintText: 'Search Store',
-                prefixIcon: const Icon(Icons.search),
+                hintStyle: textStyle14(
+                  color: AppColors.subTextColor,
+                  fontWeight: FontWeight.w600,
+                ),
+                prefixIcon: Icon(Icons.search, size: 25.0),
                 filled: true,
-                fillColor: Colors.grey[200],
+                fillColor: AppColors.logoutButtonColor,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                   borderSide: BorderSide.none,
@@ -100,7 +103,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         onTap: () {},
                         child: Container(
                           decoration: BoxDecoration(
-                            // color: Colors.grey[100],
                             color: HexColor(category.backgroundColor),
                             borderRadius: BorderRadius.circular(16),
                             border: Border.all(

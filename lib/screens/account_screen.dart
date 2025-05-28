@@ -40,7 +40,7 @@ class _AccountScreenState extends State<AccountScreen> {
                     ),
                   ),
                   SizedBox(width: 5),
-                  Icon(Icons.edit_outlined, size: 16, color: Colors.green[400]),
+                  Icon(Icons.edit_outlined, size: 16, color: AppColors.primary),
                 ],
               ),
               subtitle: Text(
@@ -109,7 +109,7 @@ class _AccountScreenState extends State<AccountScreen> {
                     ),
                     Positioned(
                       left: 16,
-                      child: Icon(Icons.logout, color: Colors.green),
+                      child: Icon(Icons.logout, color: AppColors.primary),
                     ),
                   ],
                 ),
@@ -132,7 +132,7 @@ class MenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(icon, color: Colors.black87),
+      leading: Icon(icon, color: AppColors.textColor),
       title: Text(
         title,
         style: textStyle18(

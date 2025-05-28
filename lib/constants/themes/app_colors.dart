@@ -15,6 +15,7 @@ Color hexToColor(String hex) {
 class AppColors {
   static Color primary = hexToColor('#6CAF7A');
   static Color white = hexToColor('#ffffff');
+  static Color black = hexToColor('#000000');
   static Color error = hexToColor('#B00020');
   static Color textColor = hexToColor('#181725');
   static Color subTextColor = hexToColor('#7C7C7C');
