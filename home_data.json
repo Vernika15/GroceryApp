@@ -1,0 +1,61 @@
+{
+  "greeting": "Good Morning",
+  "user_name": "Vernika",
+  "location": "Mumbai, India",
+  "banner_image": "https://example.com/banner1.jpg",
+  "categories": [
+    {
+      "id": 1,
+      "name": "Fresh Fruits & Vegetables",
+      "image": "assets/images/categories/fruits.png"
+    },
+    {
+      "id": 2,
+      "name": "Cooking Oil & Ghee",
+      "image": "assets/images/categories/fruits.png"
+    },
+    {
+      "id": 3,
+      "name": "Meat & Fish",
+      "image": "assets/images/categories/fruits.png"
+    },
+    {
+      "id": 4,
+      "name": "Bakery & Snacks",
+      "image": "assets/images/categories/fruits.png"
+    },
+    {
+      "id": 5,
+      "name": "Dairy & Eggs",
+      "image": "assets/images/categories/fruits.png"
+    },
+    {
+      "id": 6,
+      "name": "Beverages",
+      "image": "assets/images/categories/fruits.png"
+    }
+  ],
+  "popular_items": [
+    {
+      "id": 101,
+      "name": "Fresh Apples",
+      "weight": "1 kg",
+      "price": 120,
+      "image": "https://example.com/products/apples.png"
+    },
+    {
+      "id": 102,
+      "name": "Organic Eggs",
+      "weight": "12 pcs",
+      "price": 90,
+      "image": "https://example.com/products/eggs.png"
+    },
+    {
+      "id": 103,
+      "name": "Whole Wheat Bread",
+      "weight": "400 gm",
+      "price": 45,
+      "image": "https://example.com/products/bread.png"
+    }
+  ]
+}
