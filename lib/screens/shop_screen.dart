@@ -20,11 +20,19 @@ class _ShopScreenState extends State<ShopScreen> {
   }
 
   Future<HomeData> fetchHomeData() async {
-    final response = await http.get(
+    final response1 = await http.get(
       Uri.parse(
-        'https://raw.githubusercontent.com/Vernika15/GroceryApp/main/home_data.json',
+        'https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/home_data.json',
       ),
     );
+
+    const url =
+        'https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/home_data.json';
+    print('Fetching from: $url');
+
+    final response = await http.get(Uri.parse(url));
+    print('Status code: ${response.statusCode}');
+    print('Body: ${response.body}');
 
     if (response.statusCode == 200) {
       return HomeData.fromJson(json.decode(response.body));
@@ -61,10 +69,10 @@ class _ShopScreenState extends State<ShopScreen> {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.network(data.bannerImage),
-                  ),
+                  // ClipRRect(
+                  //   borderRadius: BorderRadius.circular(12),
+                  //   child: Image.network(data.bannerImage),
+                  // ),
                   const SizedBox(height: 24),
                   const Text(
                     'Categories',
@@ -83,8 +91,9 @@ class _ShopScreenState extends State<ShopScreen> {
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
+                              child: Image.network(
                                 category.image,
+                                // 'https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/fruits.png',
                                 // 'assets/images/login_image.png',
                                 height: 60,
                                 width: 60,
