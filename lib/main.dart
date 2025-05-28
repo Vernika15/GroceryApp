@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_groceries_app/screens/home_screen.dart';
 import 'package:online_groceries_app/screens/onboarding_screen.dart';
 
 void main() {
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Online Groceries App',
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: OnboardingScreen(),
+      // home: OnboardingScreen(),
+      home: HomeScreen(),
     );
   }
 }
