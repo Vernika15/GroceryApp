@@ -16,77 +16,77 @@
           "name": "Onion",
           "weight": "1 kg",
           "price": 30,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/onion.png"
         },
         {
           "id": 102,
           "name": "Potato",
           "weight": "1 kg",
           "price": 29,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/potato.png"
         },
         {
           "id": 103,
           "name": "Orange Carrot",
           "weight": "250gm",
           "price": 15,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/carrots.png"
         },
         {
           "id": 104,
           "name": "Lemon",
           "weight": "250gm",
           "price": 38,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/lemon.png"
         },
         {
           "id": 105,
-          "name": "Green Chilli",
+          "name": "Chilli",
           "weight": "100gm",
           "price": 10,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/chilli.png"
         },
         {
           "id": 106,
-          "name": "Green Capsicum",
+          "name": "Capsicum",
           "weight": "250gm",
           "price": 30,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/capsicum.png"
         },
         {
           "id": 107,
           "name": "Litchi",
           "weight": "500gm",
           "price": 199,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/litchi.png"
         },
         {
           "id": 108,
           "name": "Watermelon",
           "weight": "1 Piece",
           "price": 49,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/watermelon.png"
         },
         {
           "id": 109,
           "name": "Banana",
           "weight": "3 Pieces",
           "price": 37,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/banana.png"
         },
         {
           "id": 110,
           "name": "Green Kiwi",
           "weight": "3 Units",
           "price": 154,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/kiwi.png"
         },
         {
           "id": 111,
           "name": "Pomegranate",
           "weight": "3 Pieces",
           "price": 121,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         }
       ]
     },
@@ -102,42 +102,42 @@
           "name": "Fortune Rice Bran Oil",
           "weight": "870gm",
           "price": 168,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/riceoil.png"
         },
         {
           "id": 202,
           "name": "Fortune Mustard Oil",
           "weight": "910gm",
           "price": 158,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/mustardoil.png"
         },
         {
           "id": 203,
           "name": "Figaro Olive Oil",
           "weight": "250ml",
           "price": 412,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/oliveoil.png"
         },
         {
           "id": 204,
           "name": "Amul Pure Ghee",
           "weight": "1l",
           "price": 578,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/ghee.png"
         },
         {
           "id": 205,
           "name": "Mother Dairy Buffalo Ghee",
           "weight": "1l",
           "price": 641,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/ghee.png"
         },
         {
           "id": 206,
           "name": "Ananda Pure Ghee",
           "weight": "900ml",
           "price": 575,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/ghee.png"
         }
       ]
     },
@@ -153,21 +153,21 @@
           "name": "Licious Chicken Boneless",
           "weight": "400gm",
           "price": 295,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 302,
           "name": "Medium Prawns",
           "weight": "200gm",
           "price": 216,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 303,
           "name": "Seafood Snack",
           "weight": "400gm",
           "price": 295,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         }
       ]
     },
@@ -183,28 +183,28 @@
           "name": "Hide & Seek Cookies",
           "weight": "200gm",
           "price": 50,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 402,
           "name": "Good Day Cashew Biscuit",
           "weight": "200gm",
           "price": 45,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 403,
           "name": "Dark Fantasy Biscuit",
           "weight": "111gm",
           "price": 18,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 404,
           "name": "Oreo Vanilla Flavour Cream Biscuit",
           "weight": "125gm",
           "price": 37,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         }
       ]
     },
@@ -220,49 +220,49 @@
           "name": "Amul Lactose Free Milk",
           "weight": "250ml",
           "price": 25,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 502,
           "name": "Yakult Probiotic Drink",
           "weight": "5*65ml",
           "price": 90,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 503,
           "name": "Mother Dairy Buffalo Milk",
           "weight": "500ml",
           "price": 38,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 504,
           "name": "Table White Eggs",
           "weight": "10 Pieces",
           "price": 85,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 505,
           "name": "Amul Salted Butter",
           "weight": "100gm",
           "price": 60,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 506,
           "name": "Amul Fresh Malai Paneer",
           "weight": "200gm",
           "price": 91,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 507,
           "name": "Amul Masti Pouch Curd",
           "weight": "400gm",
           "price": 35,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         }
       ]
     },
@@ -278,42 +278,42 @@
           "name": "Pepsi Zero Sugar Soft Drink",
           "weight": "330ml",
           "price": 40,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 602,
           "name": "Coca-Cola Soft Drink",
           "weight": "750ml",
           "price": 40,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 603,
           "name": "Limca Lemon 'N' Soft Drink",
           "weight": "750ml",
           "price": 40,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 604,
           "name": "Frooti Mango Drink",
           "weight": "1.2l",
           "price": 72,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 605,
           "name": "Maaza Mango Drink",
           "weight": "600ml",
           "price": 40,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         },
         {
           "id": 606,
           "name": "Tang Instant Drink Mix - Ornage",
           "weight": "500gm",
           "price": 159,
-          "image": "..."
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
         }
       ]
     }
