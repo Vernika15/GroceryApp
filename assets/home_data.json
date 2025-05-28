@@ -9,42 +9,313 @@
       "name": "Fresh Fruits & Vegetables",
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/fruits.png",
       "border_color": "#53B175",
-      "background_color": "#F0F7F2"
+      "background_color": "#F0F7F2",
+      "products": [
+        {
+          "id": 101,
+          "name": "Onion",
+          "weight": "1 kg",
+          "price": 30,
+          "image": "..."
+        },
+        {
+          "id": 102,
+          "name": "Potato",
+          "weight": "1 kg",
+          "price": 29,
+          "image": "..."
+        },
+        {
+          "id": 103,
+          "name": "Orange Carrot",
+          "weight": "250gm",
+          "price": 15,
+          "image": "..."
+        },
+        {
+          "id": 104,
+          "name": "Lemon",
+          "weight": "250gm",
+          "price": 38,
+          "image": "..."
+        },
+        {
+          "id": 105,
+          "name": "Green Chilli",
+          "weight": "100gm",
+          "price": 10,
+          "image": "..."
+        },
+        {
+          "id": 106,
+          "name": "Green Capsicum",
+          "weight": "250gm",
+          "price": 30,
+          "image": "..."
+        },
+        {
+          "id": 107,
+          "name": "Litchi",
+          "weight": "500gm",
+          "price": 199,
+          "image": "..."
+        },
+        {
+          "id": 108,
+          "name": "Watermelon",
+          "weight": "1 Piece",
+          "price": 49,
+          "image": "..."
+        },
+        {
+          "id": 109,
+          "name": "Banana",
+          "weight": "3 Pieces",
+          "price": 37,
+          "image": "..."
+        },
+        {
+          "id": 110,
+          "name": "Green Kiwi",
+          "weight": "3 Units",
+          "price": 154,
+          "image": "..."
+        },
+        {
+          "id": 111,
+          "name": "Pomegranate",
+          "weight": "3 Pieces",
+          "price": 121,
+          "image": "..."
+        }
+      ]
     },
     {
       "id": 2,
       "name": "Cooking Oil & Ghee",
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/cooking.png",
       "border_color": "#F8A44C",
-      "background_color": "#FDF6EE"
+      "background_color": "#FDF6EE",
+      "products": [
+        {
+          "id": 201,
+          "name": "Fortune Rice Bran Oil",
+          "weight": "870gm",
+          "price": 168,
+          "image": "..."
+        },
+        {
+          "id": 202,
+          "name": "Fortune Mustard Oil",
+          "weight": "910gm",
+          "price": 158,
+          "image": "..."
+        },
+        {
+          "id": 203,
+          "name": "Figaro Olive Oil",
+          "weight": "250ml",
+          "price": 412,
+          "image": "..."
+        },
+        {
+          "id": 204,
+          "name": "Amul Pure Ghee",
+          "weight": "1l",
+          "price": 578,
+          "image": "..."
+        },
+        {
+          "id": 205,
+          "name": "Mother Dairy Buffalo Ghee",
+          "weight": "1l",
+          "price": 641,
+          "image": "..."
+        },
+        {
+          "id": 206,
+          "name": "Ananda Pure Ghee",
+          "weight": "900ml",
+          "price": 575,
+          "image": "..."
+        }
+      ]
     },
     {
       "id": 3,
       "name": "Meat & Fish",
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/meat.png",
       "border_color": "#F7A593",
-      "background_color": "#FAEAE5"
+      "background_color": "#FAEAE5",
+      "products": [
+        {
+          "id": 301,
+          "name": "Licious Chicken Boneless",
+          "weight": "400gm",
+          "price": 295,
+          "image": "..."
+        },
+        {
+          "id": 302,
+          "name": "Medium Prawns",
+          "weight": "200gm",
+          "price": 216,
+          "image": "..."
+        },
+        {
+          "id": 303,
+          "name": "Seafood Snack",
+          "weight": "400gm",
+          "price": 295,
+          "image": "..."
+        }
+      ]
     },
     {
       "id": 4,
       "name": "Bakery & Snacks",
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/bakery.png",
       "border_color": "#D3B0E0",
-      "background_color": "#F2EBF6"
+      "background_color": "#F2EBF6",
+      "products": [
+        {
+          "id": 401,
+          "name": "Hide & Seek Cookies",
+          "weight": "200gm",
+          "price": 50,
+          "image": "..."
+        },
+        {
+          "id": 402,
+          "name": "Good Day Cashew Biscuit",
+          "weight": "200gm",
+          "price": 45,
+          "image": "..."
+        },
+        {
+          "id": 403,
+          "name": "Dark Fantasy Biscuit",
+          "weight": "111gm",
+          "price": 18,
+          "image": "..."
+        },
+        {
+          "id": 404,
+          "name": "Oreo Vanilla Flavour Cream Biscuit",
+          "weight": "125gm",
+          "price": 37,
+          "image": "..."
+        }
+      ]
     },
     {
       "id": 5,
       "name": "Dairy & Eggs",
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/dairy.png",
       "border_color": "#FDE598",
-      "background_color": "#FEF9E7"
+      "background_color": "#FEF9E7",
+      "products": [
+        {
+          "id": 501,
+          "name": "Amul Lactose Free Milk",
+          "weight": "250ml",
+          "price": 25,
+          "image": "..."
+        },
+        {
+          "id": 502,
+          "name": "Yakult Probiotic Drink",
+          "weight": "5*65ml",
+          "price": 90,
+          "image": "..."
+        },
+        {
+          "id": 503,
+          "name": "Mother Dairy Buffalo Milk",
+          "weight": "500ml",
+          "price": 38,
+          "image": "..."
+        },
+        {
+          "id": 504,
+          "name": "Table White Eggs",
+          "weight": "10 Pieces",
+          "price": 85,
+          "image": "..."
+        },
+        {
+          "id": 505,
+          "name": "Amul Salted Butter",
+          "weight": "100gm",
+          "price": 60,
+          "image": "..."
+        },
+        {
+          "id": 506,
+          "name": "Amul Fresh Malai Paneer",
+          "weight": "200gm",
+          "price": 91,
+          "image": "..."
+        },
+        {
+          "id": 507,
+          "name": "Amul Masti Pouch Curd",
+          "weight": "400gm",
+          "price": 35,
+          "image": "..."
+        }
+      ]
     },
     {
       "id": 6,
       "name": "Beverages",
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/beverages.png",
       "border_color": "#B7DFF5",
-      "background_color": "#EFF7FC"
+      "background_color": "#EFF7FC",
+      "products": [
+        {
+          "id": 601,
+          "name": "Pepsi Zero Sugar Soft Drink",
+          "weight": "330ml",
+          "price": 40,
+          "image": "..."
+        },
+        {
+          "id": 602,
+          "name": "Coca-Cola Soft Drink",
+          "weight": "750ml",
+          "price": 40,
+          "image": "..."
+        },
+        {
+          "id": 603,
+          "name": "Limca Lemon 'N' Soft Drink",
+          "weight": "750ml",
+          "price": 40,
+          "image": "..."
+        },
+        {
+          "id": 604,
+          "name": "Frooti Mango Drink",
+          "weight": "1.2l",
+          "price": 72,
+          "image": "..."
+        },
+        {
+          "id": 605,
+          "name": "Maaza Mango Drink",
+          "weight": "600ml",
+          "price": 40,
+          "image": "..."
+        },
+        {
+          "id": 606,
+          "name": "Tang Instant Drink Mix - Ornage",
+          "weight": "500gm",
+          "price": 159,
+          "image": "..."
+        }
+      ]
     }
   ],
   "popular_items": [
