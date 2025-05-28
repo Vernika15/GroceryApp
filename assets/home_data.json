@@ -7,32 +7,44 @@
     {
       "id": 1,
       "name": "Fresh Fruits & Vegetables",
-      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/fruits.png"
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/fruits.png",
+      "border_color": "#53B175",
+      "background_color": "#F1F8F4"
     },
     {
       "id": 2,
       "name": "Cooking Oil & Ghee",
-      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/cooking.png"
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/cooking.png",
+      "border_color": "#53B175",
+      "background_color": "#F1F8F4"
     },
     {
       "id": 3,
       "name": "Meat & Fish",
-      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/meat.png"
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/meat.png",
+      "border_color": "#53B175",
+      "background_color": "#F1F8F4"
     },
     {
       "id": 4,
       "name": "Bakery & Snacks",
-      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/bakery.png"
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/bakery.png",
+      "border_color": "#53B175",
+      "background_color": "#F1F8F4"
     },
     {
       "id": 5,
       "name": "Dairy & Eggs",
-      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/dairy.png"
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/dairy.png",
+      "border_color": "#53B175",
+      "background_color": "#F1F8F4"
     },
     {
       "id": 6,
       "name": "Beverages",
-      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/beverages.png"
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/beverages.png",
+      "border_color": "#53B175",
+      "background_color": "#F1F8F4"
     }
   ],
   "popular_items": [
