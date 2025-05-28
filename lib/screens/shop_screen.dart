@@ -138,7 +138,9 @@ class _ShopScreenState extends State<ShopScreen> {
               return Center(child: Text('Error: ${snapshot.error}'));
             }
 
-            return Center(child: CircularProgressIndicator());
+            return Center(
+              child: CircularProgressIndicator(color: AppColors.primary),
+            );
           },
         ),
       ),

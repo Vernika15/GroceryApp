@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
+import 'package:online_groceries_app/screens/category_products_screen.dart';
 import 'package:online_groceries_app/ui_helper/text_styles.dart';
 import 'package:online_groceries_app/utils.dart';
 
@@ -52,7 +53,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -80,7 +81,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 future: futureCategories,
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(child: CircularProgressIndicator());
+                    return Center(
+                      child: CircularProgressIndicator(
+                        color: AppColors.primary,
+                      ),
+                    );
                   } else if (snapshot.hasError) {
                     return Center(child: Text('Error: ${snapshot.error}'));
                   } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
@@ -100,7 +105,18 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     itemBuilder: (context, index) {
                       final category = categories[index];
                       return GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) => CategoryProductsScreen(
+                                    categoryName: category.name,
+                                    products: category.products,
+                                  ),
+                            ),
+                          );
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             color: HexColor(category.backgroundColor),
@@ -148,6 +164,7 @@ class Category {
   final String image;
   final String borderColor;
   final String backgroundColor;
+  final List<Product> products;
 
   Category({
     required this.id,
@@ -155,6 +172,7 @@ class Category {
     required this.image,
     required this.borderColor,
     required this.backgroundColor,
+    required this.products,
   });
 
   factory Category.fromJson(Map<String, dynamic> json) {
@@ -164,6 +182,10 @@ class Category {
       image: json['image'],
       borderColor: json['border_color'],
       backgroundColor: json['background_color'],
+      products:
+          (json['products'] as List<dynamic>)
+              .map((item) => Product.fromJson(item))
+              .toList(),
     );
   }
 }

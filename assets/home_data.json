@@ -16,77 +16,77 @@
           "name": "Onion",
           "weight": "1 kg",
           "price": 30,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/onion.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/onion.png"
         },
         {
           "id": 102,
           "name": "Potato",
           "weight": "1 kg",
           "price": 29,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/potato.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/potato.png"
         },
         {
           "id": 103,
           "name": "Orange Carrot",
           "weight": "250gm",
           "price": 15,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/carrots.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/carrots.png"
         },
         {
           "id": 104,
           "name": "Lemon",
           "weight": "250gm",
           "price": 38,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/lemon.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/lemon.png"
         },
         {
           "id": 105,
           "name": "Chilli",
           "weight": "100gm",
           "price": 10,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/chilli.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/chilli.png"
         },
         {
           "id": 106,
           "name": "Capsicum",
           "weight": "250gm",
           "price": 30,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/capsicum.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/capsicum.png"
         },
         {
           "id": 107,
           "name": "Litchi",
           "weight": "500gm",
           "price": 199,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/litchi.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/litchi.png"
         },
         {
           "id": 108,
           "name": "Watermelon",
           "weight": "1 Piece",
           "price": 49,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/watermelon.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/watermelon.png"
         },
         {
           "id": 109,
           "name": "Banana",
           "weight": "3 Pieces",
           "price": 37,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/banana.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/banana.png"
         },
         {
           "id": 110,
           "name": "Green Kiwi",
           "weight": "3 Units",
           "price": 154,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/kiwi.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/kiwi.png"
         },
         {
           "id": 111,
           "name": "Pomegranate",
           "weight": "3 Pieces",
           "price": 121,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/pomegranate.png"
         }
       ]
     },
@@ -102,42 +102,42 @@
           "name": "Fortune Rice Bran Oil",
           "weight": "870gm",
           "price": 168,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/riceoil.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/riceoil.png"
         },
         {
           "id": 202,
           "name": "Fortune Mustard Oil",
           "weight": "910gm",
           "price": 158,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/mustardoil.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/mustardoil.png"
         },
         {
           "id": 203,
           "name": "Figaro Olive Oil",
           "weight": "250ml",
           "price": 412,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/oliveoil.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/oliveoil.png"
         },
         {
           "id": 204,
           "name": "Amul Pure Ghee",
           "weight": "1l",
           "price": 578,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/ghee.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/ghee.png"
         },
         {
           "id": 205,
           "name": "Mother Dairy Buffalo Ghee",
           "weight": "1l",
           "price": 641,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/ghee.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/ghee.png"
         },
         {
           "id": 206,
           "name": "Ananda Pure Ghee",
           "weight": "900ml",
           "price": 575,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/ghee.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/ghee.png"
         }
       ]
     },
