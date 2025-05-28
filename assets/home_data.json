@@ -2,12 +2,37 @@
   "greeting": "Good Morning",
   "user_name": "Vernika",
   "location": "Mumbai, India",
-  "banner_image": "https://example.com/banner1.jpg",
+  "banner_image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/banner.png",
   "categories": [
     {
       "id": 1,
       "name": "Fresh Fruits & Vegetables",
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/fruits.png"
+    },
+    {
+      "id": 2,
+      "name": "Cooking Oil & Ghee",
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/cooking.png"
+    },
+    {
+      "id": 3,
+      "name": "Meat & Fish",
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/meat.png"
+    },
+    {
+      "id": 4,
+      "name": "Bakery & Snacks",
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/bakery.png"
+    },
+    {
+      "id": 5,
+      "name": "Dairy & Eggs",
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/dairy.png"
+    },
+    {
+      "id": 6,
+      "name": "Beverages",
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/categories/beverages.png"
     }
   ],
   "popular_items": [
