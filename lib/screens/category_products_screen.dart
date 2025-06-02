@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
+import 'package:online_groceries_app/models/product.dart';
 import 'package:online_groceries_app/ui_helper/text_styles.dart';
+import 'package:online_groceries_app/widget/cart_button.dart';
 
 class CategoryProductsScreen extends StatefulWidget {
   final String categoryName;
@@ -91,18 +93,7 @@ class _CategoryProductsScreenState extends State<CategoryProductsScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: AppColors.primary,
-                        ),
-                        padding: EdgeInsets.all(6),
-                        child: Icon(
-                          Icons.add,
-                          color: AppColors.white,
-                          size: 20,
-                        ),
-                      ),
+                      CartButton(product: product),
                     ],
                   ),
                 ],
@@ -111,32 +102,6 @@ class _CategoryProductsScreenState extends State<CategoryProductsScreen> {
           },
         ),
       ),
-    );
-  }
-}
-
-class Product {
-  final int id;
-  final String name;
-  final String weight;
-  final int price;
-  final String image;
-
-  Product({
-    required this.id,
-    required this.name,
-    required this.weight,
-    required this.price,
-    required this.image,
-  });
-
-  factory Product.fromJson(Map<String, dynamic> json) {
-    return Product(
-      id: json['id'],
-      name: json['name'],
-      weight: json['weight'],
-      price: json['price'],
-      image: json['image'],
     );
   }
 }

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
+import 'package:online_groceries_app/models/homedata.dart';
 import 'package:online_groceries_app/ui_helper/text_styles.dart';
 
 class ShopScreen extends StatefulWidget {
@@ -148,76 +149,14 @@ class _ShopScreenState extends State<ShopScreen> {
   }
 }
 
-// Model Classes
-class HomeData {
-  final String greeting;
-  final String userName;
-  final String location;
-  final String bannerImage;
-  final List<Category> categories;
-  final List<PopularItem> popularItems;
+// class Category {
+//   final int id;
+//   final String name;
+//   final String image;
 
-  HomeData({
-    required this.greeting,
-    required this.userName,
-    required this.location,
-    required this.bannerImage,
-    required this.categories,
-    required this.popularItems,
-  });
+//   Category({required this.id, required this.name, required this.image});
 
-  factory HomeData.fromJson(Map<String, dynamic> json) {
-    return HomeData(
-      greeting: json['greeting'],
-      userName: json['user_name'],
-      location: json['location'],
-      bannerImage: json['banner_image'],
-      categories:
-          (json['categories'] as List)
-              .map((c) => Category.fromJson(c))
-              .toList(),
-      popularItems:
-          (json['popular_items'] as List)
-              .map((p) => PopularItem.fromJson(p))
-              .toList(),
-    );
-  }
-}
-
-class Category {
-  final int id;
-  final String name;
-  final String image;
-
-  Category({required this.id, required this.name, required this.image});
-
-  factory Category.fromJson(Map<String, dynamic> json) {
-    return Category(id: json['id'], name: json['name'], image: json['image']);
-  }
-}
-
-class PopularItem {
-  final int id;
-  final String name;
-  final String weight;
-  final int price;
-  final String image;
-
-  PopularItem({
-    required this.id,
-    required this.name,
-    required this.weight,
-    required this.price,
-    required this.image,
-  });
-
-  factory PopularItem.fromJson(Map<String, dynamic> json) {
-    return PopularItem(
-      id: json['id'],
-      name: json['name'],
-      weight: json['weight'],
-      price: json['price'],
-      image: json['image'],
-    );
-  }
-}
+//   factory Category.fromJson(Map<String, dynamic> json) {
+//     return Category(id: json['id'], name: json['name'], image: json['image']);
+//   }
+// }

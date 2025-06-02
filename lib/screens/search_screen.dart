@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
-import 'package:online_groceries_app/screens/category_products_screen.dart';
+import 'package:online_groceries_app/models/product.dart';
 import 'package:online_groceries_app/ui_helper/text_styles.dart';
+import 'package:online_groceries_app/widget/cart_button.dart';
 
 class SearchScreen extends StatefulWidget {
   final List<Product> allProducts;
@@ -111,18 +112,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: AppColors.primary,
-                                ),
-                                padding: EdgeInsets.all(6),
-                                child: Icon(
-                                  Icons.add,
-                                  color: AppColors.white,
-                                  size: 20,
-                                ),
-                              ),
+                              CartButton(product: product),
                             ],
                           ),
                         ],

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:online_groceries_app/providers/cart_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:online_groceries_app/screens/home_screen.dart';
 import 'package:online_groceries_app/screens/onboarding_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(create: (_) => CartProvider(), child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
