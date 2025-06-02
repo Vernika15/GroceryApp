@@ -278,42 +278,42 @@
           "name": "Pepsi Zero Sugar Soft Drink",
           "weight": "330ml",
           "price": 40,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pepsi.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/pepsi.png"
         },
         {
           "id": 602,
           "name": "Coca-Cola Soft Drink",
           "weight": "750ml",
           "price": 40,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/coke.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/coke.png"
         },
         {
           "id": 603,
           "name": "Limca Lemon 'N' Soft Drink",
           "weight": "750ml",
           "price": 40,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/lemon_drink.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/lemon_drink.png"
         },
         {
           "id": 604,
           "name": "Frooti Mango Drink",
           "weight": "1.2l",
           "price": 72,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/mango_drink1.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/mango_drink1.png"
         },
         {
           "id": 605,
           "name": "Maaza Mango Drink",
           "weight": "600ml",
           "price": 40,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/mango_drink2.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/mango_drink2.png"
         },
         {
           "id": 606,
           "name": "Tang Instant Drink Mix - Ornage",
           "weight": "500gm",
           "price": 159,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/orange_drink.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/orange_drink.png"
         }
       ]
     }
