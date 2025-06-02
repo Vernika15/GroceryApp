@@ -50,7 +50,7 @@ class _CategoryProductsScreenState extends State<CategoryProductsScreen> {
             crossAxisCount: 2,
             mainAxisSpacing: 16,
             crossAxisSpacing: 16,
-            childAspectRatio: 0.8,
+            childAspectRatio: 0.75,
           ),
           itemBuilder: (context, index) {
             final product = widget.products[index];

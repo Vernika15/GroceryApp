@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
 import 'package:online_groceries_app/screens/category_products_screen.dart';
+import 'package:online_groceries_app/screens/search_screen.dart';
 import 'package:online_groceries_app/ui_helper/text_styles.dart';
 import 'package:online_groceries_app/utils.dart';
 
@@ -58,19 +59,35 @@ class _ExploreScreenState extends State<ExploreScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Search Box
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Search Store',
-                hintStyle: textStyle14(
-                  color: AppColors.subTextColor,
-                  fontWeight: FontWeight.w600,
-                ),
-                prefixIcon: Icon(Icons.search, size: 25.0),
-                filled: true,
-                fillColor: AppColors.logoutButtonColor,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: BorderSide.none,
+            GestureDetector(
+              onTap: () async {
+                final categories = await futureCategories;
+                final allProducts =
+                    categories.expand((c) => c.products).toList();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (context) => SearchScreen(allProducts: allProducts),
+                  ),
+                );
+              },
+              child: AbsorbPointer(
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search Store',
+                    hintStyle: textStyle14(
+                      color: AppColors.subTextColor,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    prefixIcon: Icon(Icons.search, size: 25.0),
+                    filled: true,
+                    fillColor: AppColors.logoutButtonColor,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
                 ),
               ),
             ),
