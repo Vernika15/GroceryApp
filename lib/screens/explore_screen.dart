@@ -47,7 +47,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           'Find Products',
           style: textStyle20(
             color: AppColors.textColor,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,

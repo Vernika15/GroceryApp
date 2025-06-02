@@ -33,7 +33,7 @@ class _CategoryProductsScreenState extends State<CategoryProductsScreen> {
           widget.categoryName,
           style: textStyle20(
             color: AppColors.textColor,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
@@ -50,6 +50,7 @@ class _CategoryProductsScreenState extends State<CategoryProductsScreen> {
             crossAxisCount: 2,
             mainAxisSpacing: 16,
             crossAxisSpacing: 16,
+            childAspectRatio: 0.8,
           ),
           itemBuilder: (context, index) {
             final product = widget.products[index];
@@ -57,21 +58,27 @@ class _CategoryProductsScreenState extends State<CategoryProductsScreen> {
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
-                color: Colors.grey[100],
+                border: Border.all(color: AppColors.underlineColor, width: 1),
+                color: AppColors.white,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(child: Image.network(product.image, height: 100)),
-                  SizedBox(height: 8),
+                  SizedBox(height: 5),
                   Text(
                     product.name,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                    style: textStyle16(
+                      color: AppColors.textColor,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  SizedBox(height: 4),
                   Text(
                     product.weight,
-                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                    style: textStyle14(
+                      color: AppColors.subTextColor,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                   Spacer(),
                   Row(
@@ -79,10 +86,9 @@ class _CategoryProductsScreenState extends State<CategoryProductsScreen> {
                     children: [
                       Text(
                         '₹${product.price}',
-                        style: TextStyle(
+                        style: textStyle18(
+                          color: AppColors.textColor,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: AppColors.primary,
                         ),
                       ),
                       Container(

@@ -153,21 +153,21 @@
           "name": "Licious Chicken Boneless",
           "weight": "400gm",
           "price": 295,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/chicken.png"
         },
         {
           "id": 302,
           "name": "Medium Prawns",
           "weight": "200gm",
           "price": 216,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/prawn.png"
         },
         {
           "id": 303,
           "name": "Seafood Snack",
           "weight": "400gm",
           "price": 295,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/seafood.png"
         }
       ]
     },
@@ -183,28 +183,28 @@
           "name": "Hide & Seek Cookies",
           "weight": "200gm",
           "price": 50,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/cookies.png"
         },
         {
           "id": 402,
           "name": "Good Day Cashew Biscuit",
           "weight": "200gm",
           "price": 45,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/biscuit.png"
         },
         {
           "id": 403,
           "name": "Dark Fantasy Biscuit",
           "weight": "111gm",
           "price": 18,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/biscuit.png"
         },
         {
           "id": 404,
           "name": "Oreo Vanilla Flavour Cream Biscuit",
           "weight": "125gm",
           "price": 37,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/biscuit.png"
         }
       ]
     },
@@ -220,49 +220,49 @@
           "name": "Amul Lactose Free Milk",
           "weight": "250ml",
           "price": 25,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/milk.png"
         },
         {
           "id": 502,
           "name": "Yakult Probiotic Drink",
           "weight": "5*65ml",
           "price": 90,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/yakult.png"
         },
         {
           "id": 503,
           "name": "Mother Dairy Buffalo Milk",
           "weight": "500ml",
           "price": 38,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/buffalo_milk.png"
         },
         {
           "id": 504,
           "name": "Table White Eggs",
           "weight": "10 Pieces",
           "price": 85,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/egg.png"
         },
         {
           "id": 505,
           "name": "Amul Salted Butter",
           "weight": "100gm",
           "price": 60,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/butter.png"
         },
         {
           "id": 506,
           "name": "Amul Fresh Malai Paneer",
           "weight": "200gm",
           "price": 91,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/paneer.png"
         },
         {
           "id": 507,
           "name": "Amul Masti Pouch Curd",
           "weight": "400gm",
           "price": 35,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/curd.png"
         }
       ]
     },
@@ -278,42 +278,42 @@
           "name": "Pepsi Zero Sugar Soft Drink",
           "weight": "330ml",
           "price": 40,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pepsi.png"
         },
         {
           "id": 602,
           "name": "Coca-Cola Soft Drink",
           "weight": "750ml",
           "price": 40,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/coke.png"
         },
         {
           "id": 603,
           "name": "Limca Lemon 'N' Soft Drink",
           "weight": "750ml",
           "price": 40,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/lemon_drink.png"
         },
         {
           "id": 604,
           "name": "Frooti Mango Drink",
           "weight": "1.2l",
           "price": 72,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/mango_drink1.png"
         },
         {
           "id": 605,
           "name": "Maaza Mango Drink",
           "weight": "600ml",
           "price": 40,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/mango_drink2.png"
         },
         {
           "id": 606,
           "name": "Tang Instant Drink Mix - Ornage",
           "weight": "500gm",
           "price": 159,
-          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/pomegranate.png"
+          "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/orange_drink.png"
         }
       ]
     }
