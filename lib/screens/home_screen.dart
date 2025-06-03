@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
+import 'package:online_groceries_app/models/product.dart';
 import 'package:online_groceries_app/screens/account_screen.dart';
 import 'package:online_groceries_app/screens/cart_screen.dart';
 import 'package:online_groceries_app/screens/explore_screen.dart';
@@ -13,23 +17,59 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
+  List<Product> allProducts = [];
+  bool _isLoading = true;
+
   @override
   void initState() {
     super.initState();
+    fetchAllProducts();
   }
 
-  int _currentIndex = 0;
+  Future<void> fetchAllProducts() async {
+    const url =
+        'https://raw.githubusercontent.com/Vernika15/GroceryApp/refs/heads/main/assets/home_data.json';
+    final response = await http.get(Uri.parse(url));
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      final List categories = data['categories'];
+      final List<Product> products = [];
+
+      for (var cat in categories) {
+        for (var prod in cat['products']) {
+          products.add(Product.fromJson(prod));
+        }
+      }
+
+      setState(() {
+        allProducts = products;
+        _isLoading = false;
+      });
+    } else {
+      // Handle error
+      setState(() {
+        _isLoading = false;
+      });
+      debugPrint('Failed to load product data');
+    }
+  }
 
   // Screens to navigate between
-  final List<Widget> _screens = [
+  List<Widget> get _screens => [
     ShopScreen(),
     ExploreScreen(),
-    CartScreen(),
+    CartScreen(allProducts: allProducts),
     AccountScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    if (_isLoading) {
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
+
     return Scaffold(
       body: IndexedStack(index: _currentIndex, children: _screens),
       bottomNavigationBar: BottomNavigationBar(

@@ -21,4 +21,5 @@ class AppColors {
   static Color subTextColor = hexToColor('#7C7C7C');
   static Color underlineColor = hexToColor('#E2E2E2');
   static Color logoutButtonColor = hexToColor('#F2F3F2');
+  static Color darkGreenColor = hexToColor('#5F9C6C');
 }
