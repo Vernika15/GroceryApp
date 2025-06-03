@@ -108,6 +108,18 @@ TextStyle textStyle26({
   );
 }
 
+TextStyle textStyle28({
+  Color color = Colors.black,
+  FontWeight fontWeight = FontWeight.normal,
+}) {
+  return TextStyle(
+    fontSize: 28,
+    color: color,
+    fontWeight: fontWeight,
+    fontFamily: 'Gilroy',
+  );
+}
+
 TextStyle textStyle32({
   Color color = Colors.black,
   FontWeight fontWeight = FontWeight.normal,

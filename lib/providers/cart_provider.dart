@@ -24,4 +24,9 @@ class CartProvider with ChangeNotifier {
   int getQuantity(Product product) {
     return _items[product.id] ?? 0;
   }
+
+  void clearCart() {
+    _items.clear();
+    notifyListeners();
+  }
 }
