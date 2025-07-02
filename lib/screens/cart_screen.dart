@@ -287,7 +287,12 @@ class _CartScreenState extends State<CartScreen> {
       ),
       body:
           cartItems.isEmpty
-              ? Center(child: Text("Your cart is empty", style: textStyle16()))
+              ? Center(
+                child: Text(
+                  "Your cart is empty",
+                  style: textStyle18(color: AppColors.textColor),
+                ),
+              )
               : Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Column(

@@ -67,7 +67,13 @@ class _LocationScreenState extends State<LocationScreen> {
       // Navigator.pushReplacementNamed(context, '/home');
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(
+          builder:
+              (context) => HomeScreen(
+                latitude: position.latitude,
+                longitude: position.longitude,
+              ),
+        ),
       );
     } catch (e) {
       debugPrint('Error fetching location: $e');

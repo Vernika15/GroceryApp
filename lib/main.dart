@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       title: 'Online Groceries App',
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      // home: OnboardingScreen(),
-      home: HomeScreen(),
+      home: OnboardingScreen(),
+      // home: HomeScreen(),
     );
   }
 }

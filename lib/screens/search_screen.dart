@@ -55,9 +55,19 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       body:
           query.isEmpty
-              ? Center(child: Text('Start typing to search products'))
+              ? Center(
+                child: Text(
+                  'Start typing to search products',
+                  style: textStyle18(color: AppColors.textColor),
+                ),
+              )
               : filteredProducts.isEmpty
-              ? Center(child: Text('No products found'))
+              ? Center(
+                child: Text(
+                  'No products found',
+                  style: textStyle18(color: AppColors.textColor),
+                ),
+              )
               : Padding(
                 padding: EdgeInsets.all(16.0),
                 child: GridView.builder(

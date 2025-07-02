@@ -1,12 +1,20 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:http/http.dart' as http;
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
 import 'package:online_groceries_app/models/homedata.dart';
 import 'package:online_groceries_app/ui_helper/text_styles.dart';
 
 class ShopScreen extends StatefulWidget {
-  const ShopScreen({super.key});
+  final double latitude;
+  final double longitude;
+
+  const ShopScreen({
+    super.key,
+    required this.latitude,
+    required this.longitude,
+  });
 
   @override
   State<ShopScreen> createState() => _ShopScreenState();
@@ -14,11 +22,39 @@ class ShopScreen extends StatefulWidget {
 
 class _ShopScreenState extends State<ShopScreen> {
   late Future<HomeData> futureHomeData;
+  String? _address;
+  bool _isLoadingAddress = true;
 
   @override
   void initState() {
     super.initState();
+    _getAddressFromLatLng();
     futureHomeData = fetchHomeData();
+  }
+
+  Future<void> _getAddressFromLatLng() async {
+    try {
+      List<Placemark> placemarks = await placemarkFromCoordinates(
+        widget.latitude,
+        widget.longitude,
+      );
+
+      if (placemarks.isNotEmpty) {
+        Placemark place = placemarks[0];
+
+        setState(() {
+          _address =
+              '${place.street}, ${place.locality}, ${place.administrativeArea}, ${place.country}';
+          _isLoadingAddress = false;
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _address = 'Unable to get address';
+        _isLoadingAddress = false;
+      });
+      debugPrint('Error in reverse geocoding: $e');
+    }
   }
 
   Future<HomeData> fetchHomeData() async {
@@ -48,15 +84,20 @@ class _ShopScreenState extends State<ShopScreen> {
               return ListView(
                 padding: EdgeInsets.all(16.0),
                 children: [
-                  Text(
-                    '${data.greeting}, ${data.userName}',
-                    style: textStyle24(fontWeight: FontWeight.bold),
+                  Image.asset(
+                    'assets/images/login_image.png',
+                    height: 30,
+                    width: 30,
                   ),
                   SizedBox(height: 4),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.location_on, color: AppColors.primary),
-                      Text(data.location),
+                      Icon(Icons.location_on, color: AppColors.locationColor),
+                      SizedBox(width: 5),
+                      _isLoadingAddress
+                          ? Text('Loading address....')
+                          : Text('$_address'),
                     ],
                   ),
                   SizedBox(height: 16),

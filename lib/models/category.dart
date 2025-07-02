@@ -18,16 +18,21 @@ class Category {
   });
 
   factory Category.fromJson(Map<String, dynamic> json) {
+    final categoryName = json['name'];
+    final List<Product> productList =
+        (json['products'] as List<dynamic>)
+            .map(
+              (item) => Product.fromJson({...item, 'category': categoryName}),
+            )
+            .toList();
+
     return Category(
       id: json['id'],
       name: json['name'],
       image: json['image'],
       borderColor: json['border_color'],
       backgroundColor: json['background_color'],
-      products:
-          (json['products'] as List<dynamic>)
-              .map((item) => Product.fromJson(item))
-              .toList(),
+      products: productList,
     );
   }
 }

@@ -10,7 +10,14 @@ import 'package:online_groceries_app/screens/explore_screen.dart';
 import 'package:online_groceries_app/screens/shop_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final double latitude;
+  final double longitude;
+
+  const HomeScreen({
+    super.key,
+    required this.latitude,
+    required this.longitude,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -58,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // Screens to navigate between
   List<Widget> get _screens => [
-    ShopScreen(),
+    ShopScreen(latitude: widget.latitude, longitude: widget.longitude),
     ExploreScreen(),
     CartScreen(allProducts: allProducts),
     AccountScreen(),

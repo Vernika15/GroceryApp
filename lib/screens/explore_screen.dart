@@ -8,6 +8,7 @@ import 'package:online_groceries_app/screens/category_products_screen.dart';
 import 'package:online_groceries_app/screens/search_screen.dart';
 import 'package:online_groceries_app/ui_helper/text_styles.dart';
 import 'package:online_groceries_app/utils.dart';
+import 'package:online_groceries_app/widget/rounded_button.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
@@ -18,11 +19,18 @@ class ExploreScreen extends StatefulWidget {
 
 class _ExploreScreenState extends State<ExploreScreen> {
   late Future<List<Category>> futureCategories;
+  List<Category> allCategories = [];
+  Set<String> selectedCategoryNames = {};
+  List<Product> filteredProducts = [];
+  bool isFilterApplied = false;
 
   @override
   void initState() {
     super.initState();
-    futureCategories = fetchCategories();
+    futureCategories = fetchCategories().then((data) {
+      allCategories = data;
+      return data;
+    });
   }
 
   Future<List<Category>> fetchCategories() async {
@@ -37,6 +45,157 @@ class _ExploreScreenState extends State<ExploreScreen> {
     } else {
       throw Exception('Failed to load categories');
     }
+  }
+
+  void _showFilterOverlay() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      isDismissible: false, // Prevent tap outside to close
+      enableDrag: false, // Prevent swipe down to close
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (context, setModalState) {
+            return Container(
+              height: MediaQuery.of(context).size.height * 0.9,
+              padding: const EdgeInsets.fromLTRB(24, 16, 24, 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context); // Close overlay
+                          setModalState(() {
+                            // Reset filtered state
+                            selectedCategoryNames.clear();
+                          });
+                        },
+                        child: Icon(Icons.close, size: 25),
+                      ),
+                      Text(
+                        'Filters',
+                        style: textStyle20(
+                          color: AppColors.textColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          setModalState(() {
+                            // Reset filtered state
+                            selectedCategoryNames.clear();
+                          });
+                        },
+                        child: Text(
+                          'Clear All',
+                          style: textStyle16(
+                            color: AppColors.textColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 30),
+                  Text(
+                    'Categories',
+                    textAlign: TextAlign.left,
+                    style: textStyle20(
+                      color: AppColors.textColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    child: ListView.builder(
+                      itemCount: allCategories.length,
+                      itemBuilder: (context, index) {
+                        final category = allCategories[index];
+                        final isSelected = selectedCategoryNames.contains(
+                          category.name,
+                        );
+
+                        return CheckboxListTile(
+                          controlAffinity: ListTileControlAffinity.leading,
+                          title: Text(
+                            category.name,
+                            style: textStyle18(
+                              color:
+                                  isSelected
+                                      ? AppColors.primary
+                                      : AppColors.textColor,
+                            ),
+                          ),
+                          value: isSelected,
+                          activeColor: AppColors.primary,
+                          onChanged: (bool? value) {
+                            setModalState(() {
+                              if (value == true) {
+                                selectedCategoryNames.add(category.name);
+                              } else {
+                                selectedCategoryNames.remove(category.name);
+                              }
+                            });
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Prices',
+                    textAlign: TextAlign.left,
+                    style: textStyle20(
+                      color: AppColors.textColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 80),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: RoundedButton(
+                      btnName: 'Apply Filter',
+                      callback: () {
+                        Navigator.pop(context); // Close overlay
+                        setState(() {
+                          isFilterApplied = selectedCategoryNames.isNotEmpty;
+                          filteredProducts =
+                              allCategories
+                                  .where(
+                                    (c) =>
+                                        selectedCategoryNames.contains(c.name),
+                                  )
+                                  .expand((c) => c.products)
+                                  .toList();
+                        });
+                      },
+                      textStyle: textStyle18(
+                        color: AppColors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      bgColor: AppColors.primary,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  List<Category> _buildFilteredCategoryList() {
+    return allCategories
+        .where((c) => selectedCategoryNames.contains(c.name))
+        .toList();
   }
 
   @override
@@ -61,7 +220,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Search Box
-            GestureDetector(
+            TextField(
+              readOnly: true,
               onTap: () async {
                 final categories = await futureCategories;
                 final allProducts =
@@ -74,22 +234,24 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ),
                 );
               },
-              child: AbsorbPointer(
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search Store',
-                    hintStyle: textStyle14(
-                      color: AppColors.subTextColor,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    prefixIcon: Icon(Icons.search, size: 25.0),
-                    filled: true,
-                    fillColor: AppColors.logoutButtonColor,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide: BorderSide.none,
-                    ),
-                  ),
+              decoration: InputDecoration(
+                hintText: 'Search Store',
+                hintStyle: textStyle14(
+                  color: AppColors.subTextColor,
+                  fontWeight: FontWeight.w600,
+                ),
+                prefixIcon: Icon(Icons.search, size: 25.0),
+                suffixIcon: GestureDetector(
+                  onTap: () {
+                    _showFilterOverlay();
+                  },
+                  child: Icon(Icons.tune),
+                ),
+                filled: true,
+                fillColor: AppColors.logoutButtonColor,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: BorderSide.none,
                 ),
               ),
             ),
@@ -111,7 +273,10 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     return Center(child: Text('No categories available'));
                   }
 
-                  final categories = snapshot.data!;
+                  final categories =
+                      isFilterApplied
+                          ? _buildFilteredCategoryList()
+                          : snapshot.data!;
 
                   return GridView.builder(
                     gridDelegate:
