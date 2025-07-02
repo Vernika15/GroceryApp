@@ -1,5 +1,6 @@
 import 'package:online_groceries_app/models/BestSelling.dart';
 import 'package:online_groceries_app/models/category.dart';
+import 'package:online_groceries_app/models/exclusiveoffer.dart';
 import 'package:online_groceries_app/models/popularitem.dart';
 
 class HomeData {
@@ -10,6 +11,7 @@ class HomeData {
   final List<Category> categories;
   final List<PopularItem> popularItems;
   final List<BestSelling> bestSelling;
+  final List<ExclusiveOffer> exclusiveOffers;
 
   HomeData({
     required this.greeting,
@@ -19,6 +21,7 @@ class HomeData {
     required this.categories,
     required this.popularItems,
     required this.bestSelling,
+    required this.exclusiveOffers,
   });
 
   factory HomeData.fromJson(Map<String, dynamic> json) {
@@ -38,6 +41,10 @@ class HomeData {
       bestSelling:
           (json['best_selling'] as List)
               .map((p) => BestSelling.fromJson(p))
+              .toList(),
+      exclusiveOffers:
+          (json['exclusive_offers'] as List)
+              .map((p) => ExclusiveOffer.fromJson(p))
               .toList(),
     );
   }

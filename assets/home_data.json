@@ -318,6 +318,29 @@
       ]
     }
   ],
+  "exclusive_offers": [
+    {
+      "id": 103,
+      "name": "Orange Carrot",
+      "weight": "250gm",
+      "price": 15,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/carrots.png"
+    },
+    {
+      "id": 107,
+      "name": "Litchi",
+      "weight": "500gm",
+      "price": 199,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/litchi.png"
+    },
+    {
+      "id": 108,
+      "name": "Watermelon",
+      "weight": "1 Piece",
+      "price": 49,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/watermelon.png"
+    }
+  ],
   "popular_items": [
     {
       "id": 101,
@@ -357,7 +380,7 @@
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/onion.png"
     },
     {
-      "id": 102,
+      "id": 204,
       "name": "Amul Pure Ghee",
       "weight": "1l",
       "price": 578,

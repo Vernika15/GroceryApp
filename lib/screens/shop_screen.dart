@@ -109,56 +109,7 @@ class _ShopScreenState extends State<ShopScreen> {
                   ),
                   SizedBox(height: 24),
                   Text(
-                    'Categories',
-                    style: textStyle20(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(height: 12),
-                  SizedBox(
-                    height: 100,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: data.categories.length,
-                      separatorBuilder: (_, __) => const SizedBox(width: 12),
-                      itemBuilder: (context, index) {
-                        final category = data.categories[index];
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder:
-                                    (context) => CategoryProductsScreen(
-                                      categoryName: category.name,
-                                      products: category.products,
-                                    ),
-                              ),
-                            );
-                          },
-                          child: Column(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.network(
-                                  category.image,
-                                  height: 60,
-                                  width: 60,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              SizedBox(height: 8),
-                              Text(category.name, style: textStyle12()),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  SizedBox(height: 24),
-                  Text(
-                    'Popular Items',
+                    'Exclusive Offer',
                     style: textStyle20(
                       color: AppColors.textColor,
                       fontWeight: FontWeight.w600,
@@ -169,7 +120,7 @@ class _ShopScreenState extends State<ShopScreen> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children:
-                          data.popularItems.map((prod) {
+                          data.exclusiveOffers.map((product) {
                             return Container(
                               margin: EdgeInsets.only(right: 12),
                               padding: EdgeInsets.all(12),
@@ -187,21 +138,21 @@ class _ShopScreenState extends State<ShopScreen> {
                                 children: [
                                   Center(
                                     child: Image.network(
-                                      prod.image,
+                                      product.image,
                                       height: 50,
                                       width: 50,
                                     ),
                                   ),
                                   SizedBox(height: 15),
                                   Text(
-                                    prod.name,
+                                    product.name,
                                     style: textStyle16(
                                       color: AppColors.textColor,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   Text(
-                                    prod.weight,
+                                    product.weight,
                                     style: textStyle14(
                                       color: AppColors.subTextColor,
                                       fontWeight: FontWeight.w500,
@@ -213,7 +164,7 @@ class _ShopScreenState extends State<ShopScreen> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        '₹${prod.price}',
+                                        '₹${product.price}',
                                         style: textStyle18(
                                           color: AppColors.textColor,
                                           fontWeight: FontWeight.bold,
@@ -221,11 +172,92 @@ class _ShopScreenState extends State<ShopScreen> {
                                       ),
                                       CartButton(
                                         product: Product(
-                                          id: prod.id,
-                                          name: prod.name,
-                                          weight: prod.weight,
-                                          price: prod.price,
-                                          image: prod.image,
+                                          id: product.id,
+                                          name: product.name,
+                                          weight: product.weight,
+                                          price: product.price,
+                                          image: product.image,
+                                          category: '',
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            );
+                          }).toList(),
+                    ),
+                  ),
+                  SizedBox(height: 24),
+                  Text(
+                    'Popular Items',
+                    style: textStyle20(
+                      color: AppColors.textColor,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children:
+                          data.popularItems.map((product) {
+                            return Container(
+                              margin: EdgeInsets.only(right: 12),
+                              padding: EdgeInsets.all(12),
+                              width: 180,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(18),
+                                border: Border.all(
+                                  color: AppColors.underlineColor,
+                                  width: 1,
+                                ),
+                                color: AppColors.white,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Center(
+                                    child: Image.network(
+                                      product.image,
+                                      height: 50,
+                                      width: 50,
+                                    ),
+                                  ),
+                                  SizedBox(height: 15),
+                                  Text(
+                                    product.name,
+                                    style: textStyle16(
+                                      color: AppColors.textColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    product.weight,
+                                    style: textStyle14(
+                                      color: AppColors.subTextColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '₹${product.price}',
+                                        style: textStyle18(
+                                          color: AppColors.textColor,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      CartButton(
+                                        product: Product(
+                                          id: product.id,
+                                          name: product.name,
+                                          weight: product.weight,
+                                          price: product.price,
+                                          image: product.image,
                                           category: '',
                                         ),
                                       ),
@@ -246,30 +278,76 @@ class _ShopScreenState extends State<ShopScreen> {
                     ),
                   ),
                   SizedBox(height: 12),
-                  SizedBox(
-                    height: 100,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: data.bestSelling.length,
-                      separatorBuilder: (_, __) => const SizedBox(width: 12),
-                      itemBuilder: (context, index) {
-                        final category = data.bestSelling[index];
-                        return Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.network(
-                                category.image,
-                                height: 60,
-                                width: 60,
-                                fit: BoxFit.cover,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children:
+                          data.bestSelling.map((product) {
+                            return Container(
+                              margin: EdgeInsets.only(right: 12),
+                              padding: EdgeInsets.all(12),
+                              width: 180,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(18),
+                                border: Border.all(
+                                  color: AppColors.underlineColor,
+                                  width: 1,
+                                ),
+                                color: AppColors.white,
                               ),
-                            ),
-                            SizedBox(height: 8),
-                            Text(category.name, style: textStyle12()),
-                          ],
-                        );
-                      },
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Center(
+                                    child: Image.network(
+                                      product.image,
+                                      height: 50,
+                                      width: 50,
+                                    ),
+                                  ),
+                                  SizedBox(height: 15),
+                                  Text(
+                                    product.name,
+                                    style: textStyle16(
+                                      color: AppColors.textColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    product.weight,
+                                    style: textStyle14(
+                                      color: AppColors.subTextColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '₹${product.price}',
+                                        style: textStyle18(
+                                          color: AppColors.textColor,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      CartButton(
+                                        product: Product(
+                                          id: product.id,
+                                          name: product.name,
+                                          weight: product.weight,
+                                          price: product.price,
+                                          image: product.image,
+                                          category: '',
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            );
+                          }).toList(),
                     ),
                   ),
                 ],
