@@ -20,15 +20,20 @@ class ExploreScreen extends StatefulWidget {
 class _ExploreScreenState extends State<ExploreScreen> {
   late Future<List<Category>> futureCategories;
   List<Category> allCategories = [];
+  late List<Category> displayedCategories;
   Set<String> selectedCategoryNames = {};
   List<Product> filteredProducts = [];
   bool isFilterApplied = false;
+  double _minPrice = 0;
+  double _maxPrice = 500;
+  RangeValues _selectedRange = const RangeValues(0, 500);
 
   @override
   void initState() {
     super.initState();
     futureCategories = fetchCategories().then((data) {
       allCategories = data;
+      displayedCategories = List.from(data);
       return data;
     });
   }
@@ -71,10 +76,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       GestureDetector(
                         onTap: () {
                           Navigator.pop(context); // Close overlay
-                          setModalState(() {
-                            // Reset filtered state
-                            selectedCategoryNames.clear();
-                          });
                         },
                         child: Icon(Icons.close, size: 25),
                       ),
@@ -88,8 +89,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       TextButton(
                         onPressed: () {
                           setModalState(() {
-                            // Reset filtered state
                             selectedCategoryNames.clear();
+                            _selectedRange = const RangeValues(0, 500);
+                          });
+                          setState(() {
+                            isFilterApplied = false;
+                            displayedCategories = List.from(allCategories);
                           });
                         },
                         child: Text(
@@ -156,6 +161,39 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  RangeSlider(
+                    values: _selectedRange,
+                    min: _minPrice,
+                    max: _maxPrice,
+                    divisions: 100,
+                    labels: RangeLabels(
+                      '₹${_selectedRange.start.round()}',
+                      '₹${_selectedRange.end.round()}',
+                    ),
+                    activeColor: AppColors.primary,
+                    inactiveColor: AppColors.primary.withOpacity(0.3),
+                    onChanged: (RangeValues values) {
+                      setModalState(() {
+                        _selectedRange = values;
+                      });
+                    },
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Min: ₹${_selectedRange.start.round()}',
+                          style: textStyle14(fontWeight: FontWeight.w500),
+                        ),
+                        Text(
+                          'Max: ₹${_selectedRange.end.round()}',
+                          style: textStyle14(fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                  ),
                   SizedBox(height: 80),
                   SizedBox(
                     width: double.infinity,
@@ -165,14 +203,40 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       callback: () {
                         Navigator.pop(context); // Close overlay
                         setState(() {
-                          isFilterApplied = selectedCategoryNames.isNotEmpty;
-                          filteredProducts =
-                              allCategories
-                                  .where(
-                                    (c) =>
-                                        selectedCategoryNames.contains(c.name),
-                                  )
-                                  .expand((c) => c.products)
+                          isFilterApplied = true;
+
+                          final categoriesToFilter =
+                              selectedCategoryNames.isEmpty
+                                  ? allCategories
+                                  : allCategories
+                                      .where(
+                                        (cat) => selectedCategoryNames.contains(
+                                          cat.name,
+                                        ),
+                                      )
+                                      .toList();
+
+                          displayedCategories =
+                              categoriesToFilter
+                                  .map((category) {
+                                    final filteredProducts =
+                                        category.products.where((product) {
+                                          return product.price >=
+                                                  _selectedRange.start &&
+                                              product.price <=
+                                                  _selectedRange.end;
+                                        }).toList();
+
+                                    return Category(
+                                      id: category.id,
+                                      name: category.name,
+                                      image: category.image,
+                                      borderColor: category.borderColor,
+                                      backgroundColor: category.backgroundColor,
+                                      products: filteredProducts,
+                                    );
+                                  })
+                                  .where((cat) => cat.products.isNotEmpty)
                                   .toList();
                         });
                       },
@@ -273,10 +337,19 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     return Center(child: Text('No categories available'));
                   }
 
-                  final categories =
-                      isFilterApplied
-                          ? _buildFilteredCategoryList()
-                          : snapshot.data!;
+                  final categories = displayedCategories;
+
+                  if (categories.isEmpty) {
+                    return Center(
+                      child: Text(
+                        'No data found',
+                        style: textStyle18(
+                          color: AppColors.subTextColor,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    );
+                  }
 
                   return GridView.builder(
                     gridDelegate:
