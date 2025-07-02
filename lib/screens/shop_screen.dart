@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
 import 'package:online_groceries_app/models/homedata.dart';
 import 'package:online_groceries_app/models/product.dart';
-import 'package:online_groceries_app/screens/category_products_screen.dart';
 import 'package:online_groceries_app/ui_helper/text_styles.dart';
 import 'package:online_groceries_app/widget/cart_button.dart';
 

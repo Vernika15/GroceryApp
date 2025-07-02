@@ -320,25 +320,32 @@
   ],
   "exclusive_offers": [
     {
-      "id": 103,
-      "name": "Orange Carrot",
-      "weight": "250gm",
-      "price": 15,
-      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/carrots.png"
+      "id": 601,
+      "name": "Pepsi Zero Sugar Soft Drink",
+      "weight": "330ml",
+      "price": 40,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/pepsi.png"
     },
     {
-      "id": 107,
-      "name": "Litchi",
-      "weight": "500gm",
-      "price": 199,
-      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/litchi.png"
+      "id": 505,
+      "name": "Amul Salted Butter",
+      "weight": "100gm",
+      "price": 60,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/butter.png"
     },
     {
-      "id": 108,
-      "name": "Watermelon",
-      "weight": "1 Piece",
-      "price": 49,
-      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/watermelon.png"
+      "id": 402,
+      "name": "Good Day Cashew Biscuit",
+      "weight": "200gm",
+      "price": 45,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/biscuit.png"
+    },
+    {
+      "id": 403,
+      "name": "Dark Fantasy Biscuit",
+      "weight": "111gm",
+      "price": 18,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/biscuit.png"
     }
   ],
   "popular_items": [
@@ -373,11 +380,11 @@
   ],
   "best_selling": [
     {
-      "id": 101,
-      "name": "Onion",
-      "weight": "1 kg",
-      "price": 30,
-      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/onion.png"
+      "id": 203,
+      "name": "Figaro Olive Oil",
+      "weight": "250ml",
+      "price": 412,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/oliveoil.png"
     },
     {
       "id": 204,
@@ -385,6 +392,27 @@
       "weight": "1l",
       "price": 578,
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/ghee.png"
+    },
+    {
+      "id": 205,
+      "name": "Mother Dairy Buffalo Ghee",
+      "weight": "1l",
+      "price": 641,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/ghee.png"
+    },
+    {
+      "id": 302,
+      "name": "Medium Prawns",
+      "weight": "200gm",
+      "price": 216,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/prawn.png"
+    },
+    {
+      "id": 303,
+      "name": "Seafood Snack",
+      "weight": "400gm",
+      "price": 295,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/seafood.png"
     }
   ]
 }
