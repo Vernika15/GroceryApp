@@ -4,8 +4,10 @@ import 'package:geocoding/geocoding.dart';
 import 'package:http/http.dart' as http;
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
 import 'package:online_groceries_app/models/homedata.dart';
+import 'package:online_groceries_app/models/product.dart';
 import 'package:online_groceries_app/screens/category_products_screen.dart';
 import 'package:online_groceries_app/ui_helper/text_styles.dart';
+import 'package:online_groceries_app/widget/cart_button.dart';
 
 class ShopScreen extends StatefulWidget {
   final double latitude;
@@ -163,14 +165,95 @@ class _ShopScreenState extends State<ShopScreen> {
                     ),
                   ),
                   SizedBox(height: 12),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children:
+                          data.popularItems.map((prod) {
+                            return Container(
+                              margin: EdgeInsets.only(right: 12),
+                              padding: EdgeInsets.all(12),
+                              width: 180,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(18),
+                                border: Border.all(
+                                  color: AppColors.underlineColor,
+                                  width: 1,
+                                ),
+                                color: AppColors.white,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Center(
+                                    child: Image.network(
+                                      prod.image,
+                                      height: 50,
+                                      width: 50,
+                                    ),
+                                  ),
+                                  SizedBox(height: 15),
+                                  Text(
+                                    prod.name,
+                                    style: textStyle16(
+                                      color: AppColors.textColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    prod.weight,
+                                    style: textStyle14(
+                                      color: AppColors.subTextColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '₹${prod.price}',
+                                        style: textStyle18(
+                                          color: AppColors.textColor,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      CartButton(
+                                        product: Product(
+                                          id: prod.id,
+                                          name: prod.name,
+                                          weight: prod.weight,
+                                          price: prod.price,
+                                          image: prod.image,
+                                          category: '',
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            );
+                          }).toList(),
+                    ),
+                  ),
+                  SizedBox(height: 24),
+                  Text(
+                    'Best Selling',
+                    style: textStyle20(
+                      color: AppColors.textColor,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 12),
                   SizedBox(
                     height: 100,
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
-                      itemCount: data.popularItems.length,
+                      itemCount: data.bestSelling.length,
                       separatorBuilder: (_, __) => const SizedBox(width: 12),
                       itemBuilder: (context, index) {
-                        final category = data.popularItems[index];
+                        final category = data.bestSelling[index];
                         return Column(
                           children: [
                             ClipRRect(
@@ -189,31 +272,6 @@ class _ShopScreenState extends State<ShopScreen> {
                       },
                     ),
                   ),
-                  // // Column(
-                  // //   children:
-                  // //       data.popularItems.map((item) {
-                  // //         return Card(
-                  // //           shape: RoundedRectangleBorder(
-                  // //             borderRadius: BorderRadius.circular(12),
-                  // //           ),
-                  // //           margin:  EdgeInsets.only(bottom: 16),
-                  // //           child: ListTile(
-                  // //             leading: ClipRRect(
-                  // //               borderRadius: BorderRadius.circular(10),
-                  // //               child: Image.network(
-                  // //                 item.image,
-                  // //                 height: 50,
-                  // //                 width: 50,
-                  // //                 fit: BoxFit.cover,
-                  // //               ),
-                  // //             ),
-                  // //             title: Text(item.name),
-                  // //             subtitle: Text(item.weight),
-                  // //             trailing: Text('₹${item.price}'),
-                  // //           ),
-                  // //         );
-                  // //       }).toList(),
-                  // ),
                 ],
               );
             } else if (snapshot.hasError) {

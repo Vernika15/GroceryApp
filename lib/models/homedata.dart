@@ -1,3 +1,4 @@
+import 'package:online_groceries_app/models/BestSelling.dart';
 import 'package:online_groceries_app/models/category.dart';
 import 'package:online_groceries_app/models/popularitem.dart';
 
@@ -8,6 +9,7 @@ class HomeData {
   final String bannerImage;
   final List<Category> categories;
   final List<PopularItem> popularItems;
+  final List<BestSelling> bestSelling;
 
   HomeData({
     required this.greeting,
@@ -16,6 +18,7 @@ class HomeData {
     required this.bannerImage,
     required this.categories,
     required this.popularItems,
+    required this.bestSelling,
   });
 
   factory HomeData.fromJson(Map<String, dynamic> json) {
@@ -31,6 +34,10 @@ class HomeData {
       popularItems:
           (json['popular_items'] as List)
               .map((p) => PopularItem.fromJson(p))
+              .toList(),
+      bestSelling:
+          (json['best_selling'] as List)
+              .map((p) => BestSelling.fromJson(p))
               .toList(),
     );
   }

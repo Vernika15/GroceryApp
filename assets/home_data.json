@@ -327,21 +327,21 @@
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/onion.png"
     },
     {
-      "id": 102,
+      "id": 103,
       "name": "Orange Carrot",
       "weight": "250gm",
       "price": 15,
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/carrots.png"
     },
     {
-      "id": 103,
+      "id": 107,
       "name": "Litchi",
       "weight": "500gm",
       "price": 199,
       "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/litchi.png"
     },
     {
-      "id": 104,
+      "id": 108,
       "name": "Watermelon",
       "weight": "1 Piece",
       "price": 49,
