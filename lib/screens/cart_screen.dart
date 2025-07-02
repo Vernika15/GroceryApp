@@ -283,6 +283,7 @@ class _CartScreenState extends State<CartScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        automaticallyImplyLeading: false, // removes the back button
         centerTitle: true,
       ),
       body:

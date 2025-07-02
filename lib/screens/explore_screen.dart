@@ -256,12 +256,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
     );
   }
 
-  List<Category> _buildFilteredCategoryList() {
-    return allCategories
-        .where((c) => selectedCategoryNames.contains(c.name))
-        .toList();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -276,6 +270,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        automaticallyImplyLeading: false, // removes the back button
         centerTitle: true,
       ),
       body: Padding(

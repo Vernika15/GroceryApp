@@ -321,24 +321,47 @@
   "popular_items": [
     {
       "id": 101,
-      "name": "Fresh Apples",
+      "name": "Onion",
       "weight": "1 kg",
-      "price": 120,
-      "image": "https://example.com/products/apples.png"
+      "price": 30,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/onion.png"
     },
     {
       "id": 102,
-      "name": "Organic Eggs",
-      "weight": "12 pcs",
-      "price": 90,
-      "image": "https://example.com/products/eggs.png"
+      "name": "Orange Carrot",
+      "weight": "250gm",
+      "price": 15,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/carrots.png"
     },
     {
       "id": 103,
-      "name": "Whole Wheat Bread",
-      "weight": "400 gm",
-      "price": 45,
-      "image": "https://example.com/products/bread.png"
+      "name": "Litchi",
+      "weight": "500gm",
+      "price": 199,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/litchi.png"
+    },
+    {
+      "id": 104,
+      "name": "Watermelon",
+      "weight": "1 Piece",
+      "price": 49,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/watermelon.png"
+    }
+  ],
+  "best_selling": [
+    {
+      "id": 101,
+      "name": "Onion",
+      "weight": "1 kg",
+      "price": 30,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/onion.png"
+    },
+    {
+      "id": 102,
+      "name": "Amul Pure Ghee",
+      "weight": "1l",
+      "price": 578,
+      "image": "https://raw.githubusercontent.com/Vernika15/GroceryApp/main/assets/images/products/ghee.png"
     }
   ]
 }

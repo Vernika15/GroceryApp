@@ -4,6 +4,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:http/http.dart' as http;
 import 'package:online_groceries_app/constants/themes/app_colors.dart';
 import 'package:online_groceries_app/models/homedata.dart';
+import 'package:online_groceries_app/screens/category_products_screen.dart';
 import 'package:online_groceries_app/ui_helper/text_styles.dart';
 
 class ShopScreen extends StatefulWidget {
@@ -43,8 +44,7 @@ class _ShopScreenState extends State<ShopScreen> {
         Placemark place = placemarks[0];
 
         setState(() {
-          _address =
-              '${place.street}, ${place.locality}, ${place.administrativeArea}, ${place.country}';
+          _address = '${place.administrativeArea}, ${place.country}';
           _isLoadingAddress = false;
         });
       }
@@ -122,6 +122,55 @@ class _ShopScreenState extends State<ShopScreen> {
                       separatorBuilder: (_, __) => const SizedBox(width: 12),
                       itemBuilder: (context, index) {
                         final category = data.categories[index];
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) => CategoryProductsScreen(
+                                      categoryName: category.name,
+                                      products: category.products,
+                                    ),
+                              ),
+                            );
+                          },
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.network(
+                                  category.image,
+                                  height: 60,
+                                  width: 60,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Text(category.name, style: textStyle12()),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 24),
+                  Text(
+                    'Popular Items',
+                    style: textStyle20(
+                      color: AppColors.textColor,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  SizedBox(
+                    height: 100,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: data.popularItems.length,
+                      separatorBuilder: (_, __) => const SizedBox(width: 12),
+                      itemBuilder: (context, index) {
+                        final category = data.popularItems[index];
                         return Column(
                           children: [
                             ClipRRect(
@@ -140,15 +189,6 @@ class _ShopScreenState extends State<ShopScreen> {
                       },
                     ),
                   ),
-                  SizedBox(height: 24),
-                  Text(
-                    'Popular Items',
-                    style: textStyle20(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(height: 12),
                   // // Column(
                   // //   children:
                   // //       data.popularItems.map((item) {
@@ -189,15 +229,3 @@ class _ShopScreenState extends State<ShopScreen> {
     );
   }
 }
-
-// class Category {
-//   final int id;
-//   final String name;
-//   final String image;
-
-//   Category({required this.id, required this.name, required this.image});
-
-//   factory Category.fromJson(Map<String, dynamic> json) {
-//     return Category(id: json['id'], name: json['name'], image: json['image']);
-//   }
-// }
